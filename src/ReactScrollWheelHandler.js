@@ -119,7 +119,7 @@ class ReactScrollWheelHandler extends Component {
 
     if (e.keyCode === 38) {
       if (upHandler) {
-        upHandler();
+        upHandler(e);
       }
       if (timeout) {
         this.startTimeout();
@@ -128,7 +128,7 @@ class ReactScrollWheelHandler extends Component {
 
     if (e.keyCode === 37) {
       if (rightHandler) {
-        rightHandler();
+        rightHandler(e);
       }
       if (timeout) {
         this.startTimeout();
@@ -137,7 +137,7 @@ class ReactScrollWheelHandler extends Component {
 
     if (e.keyCode === 39) {
       if (leftHandler) {
-        leftHandler();
+        leftHandler(e);
       }
       if (timeout) {
         this.startTimeout();
@@ -146,7 +146,7 @@ class ReactScrollWheelHandler extends Component {
 
     if (e.keyCode === 40) {
       if (downHandler) {
-        downHandler();
+        downHandler(e);
       }
       if (timeout) {
         this.startTimeout();
@@ -196,26 +196,26 @@ class ReactScrollWheelHandler extends Component {
       let s = this.sign(swipeX);
       if (s < 0) {
         if (leftHandler) {
-          leftHandler();
+          leftHandler(e);
         }
       }
 
       if (s > 0) {
         if (rightHandler) {
-          rightHandler();
+          rightHandler(e);
         }
       }
     } else {
       let s = this.sign(swipeY);
       if (s < 0) {
         if (downHandler) {
-          downHandler();
+          downHandler(e);
         }
       }
 
       if (s > 0) {
         if (upHandler) {
-          upHandler();
+          upHandler(e);
         }
       }
     }
